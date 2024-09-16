@@ -24,7 +24,7 @@ Responsive Design: Fully functional on both mobile and desktop platforms.
     **CSS3 (Bootstrap or Custom CSS)**
     **JavaScript (jQuery dynamic UI)**
 
--Backend:
+- Backend:
     **Flask (Python)**
 
 - APIs:
