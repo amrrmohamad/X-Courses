@@ -99,7 +99,8 @@ Feel free to submit pull requests or issues for improving the website. We welcom
     ├── manage.py               # Django management script
     ├── README.md               # Readme file
     ├── AUTHOR                  # Author file
-    └── .gitignore              # Git ignore file
+    ├── .gitignore              # Git ignore file
+    └── .env                    # Environment file for sensitive data (database credentials, etc.)
 ```
 
 ## 📝 License
