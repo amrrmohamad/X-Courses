@@ -112,7 +112,7 @@ This project is licensed under the MIT License.
 
 ## 👥 Author
 
-1. ** add author here.
+1. ** Amr Mohamad Bakr.
 2. ** add author here.
 3. ** add author here.
 4. ** add author here.
