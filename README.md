@@ -1,23 +1,31 @@
-<h1>🌤 X Weather - Daily Weather Forecast Website</h1>
+<h1>📚 X-Courses Website</h1>
 
-X Weather is a modern, responsive weather forecast website that provides users with real-time weather updates, weekly and hourly forecasts, and top city forecasts. The website is designed with a sleek and minimal interface to offer an excellent user experience. Users can also subscribe to receive regular weather updates via email.
+A modern and responsive website for offering online courses, allowing users to search, enroll, and track their progress through various educational content. This platform is designed for both learners and instructors to create a seamless online learning experience.
 
 ## 🌐 Live Demo
 
 [Insert your website's URL here]
 
-## 📜 Features
+## 🎯 Features
 
-Current Weather Display: Shows real-time weather data such as temperature, humidity, wind speed, and rain probability.
-Weekly Weather Forecast: Provides a 7-day weather outlook.
-Hourly Weather Update: Displays weather conditions for specific hours of the day (e.g., sunrise, sunset).
-Top City Forecast: Users can view quick weather reports for major cities across the world.
-Recent Searches: A section where users can quickly revisit their last searched cities.
-Weather News: Get the latest updates and news related to weather conditions globally.
-Newsletter Subscription: Users can subscribe to receive weather updates via email.
-Responsive Design: Fully functional on both mobile and desktop platforms.
+1. **User-Friendly Interface:**
+    - Easy navigation for users to find, enroll, and access courses.
+2. **Course Listings:**
+    - Search and filter courses by categories, difficulty, and instructor.
+3. **Detailed Course Pages:**
+    - Each course has a dedicated page with syllabus, price, reviews, and instructor bio.
+4. **Responsive Design:**
+    - Fully responsive design for mobile, tablet, and desktop users.
+5. **User Authentication:**
+    - Secure login and registration for students and instructors.
+6. **Progress Tracking:**
+    - Track learning progress with completion certificates upon finishing courses.
+7. **Instructor Dashboard:**
+    - Instructors can manage courses, view student progress, and analyze performance.
+8. **Payments:**
+    - Secure payment integration for course enrollment.
 
-## 🛠 Tech Stack
+## 🚀 Technologies Used
 
 1. **Frontend:**
     - HTML5
@@ -25,90 +33,78 @@ Responsive Design: Fully functional on both mobile and desktop platforms.
     - JavaScript (jQuery dynamic UI)
 
 2. **Backend:**
-    - Flask (Python)
+    - Django (Python)
 
-3. **APIs:**
-    - OpenWeatherMap or WeatherAPI for fetching real-time weather data.
+3. **Payment Gateway:**
+    - Stripe/PayPal integration for course purchases.
 
 4. **Database (Optional):**
-    - PostgreSQL or MySQL for storing user data (e.g., newslette subscriptions).
+    - PostgreSQL for storing user data.
 
-## 🖥️ Installation Instructions
+5. **Authentication:**
+    - OAuth2 or JWT-based user authentication.
+
+## 🛠️ Installation & Setup
 
 Step 1: Clone the Repository
 
 ```bash
-    git clone https://github.com/yourusername/X-weather.git
-    cd X-weather
+    git clone https://github.com/yourusername/X-Courses.git
+    cd X-Courses
 ```
 
 Step 2: Install Dependencies
-    For Python (Flask) backend:
+    For Python (Django) backend:
 
 ```bash
     pip install -r requirements.txt
 ```
 
-Step 3: API Setup
-    Sign up for an API key from OpenWeatherMap or WeatherAPI.
-    Create a .env file at the root of your project and add your API key:
+Step 3: Run the Application
+    For Django (Python):
 
 ```bash
-    API_KEY=your_api_key_here
-```
-
-Step 4: Run the Application
-    For Flask (Python):
-
-```bash
-    flask run
+    python mange.py runserver
 ```
 
 Step 5: Access the Website
-    Open your browser and go to <a herf="http://localhost:5000">run-server</a> (Flask).
+    Open your browser and go to <a herf="http://localhost:5000">run-server</a> (Django).
 
-## 🚀 Features in Detail
+## 🤝 Contributing
 
-Current Weather: Fetches and displays weather data for a selected city or the user’s current location.
-Weekly Forecast: Displays a 7-day weather forecast, showing min and max temperatures and weather icons.
-Hourly Weather: Provides detailed weather forecasts for different times of the day.
-Search History: Stores and displays the user’s recent search results.
-Top City Forecast: Quick weather summaries for popular cities worldwide, using country flags as visual aids.
-Weather News Section: Features weather-related news articles with thumbnail images and links to full content.
-Newsletter Subscription: Users can sign up to receive periodic weather updates directly in their inbox.
+Feel free to submit pull requests or issues for improving the website. We welcome contributions to add new features, enhance the design, or fix bugs.
 
 ## 📦 Folder Structure
 
 ```bash
-    X-weather/
-    |
-    ├── static/
-    |   |── css/
-    |   |    ├── style.css
-    |   |    ├── login.css
-    |   |    └── signup.css
-    |   ├── js/
-    |   |    └── script.js
-    |   └── images/
-    |
-    ├── templates/
-    |   ├── login.html
-    |   ├── signup.html
-    |   └── index.html
-    |
-    ├── app.py
-    ├── database.py (if using a database)
-    ├── README.md
-    └── requirements.txt (or package.json)
+    X-Courses/
+    │
+    ├── /x-courses/       # Django project directory
+    │   ├── /courses/           # Main app directory for courses
+    │   │   ├── /migrations/    # Database migrations
+    │   │   ├── /static/        # Static files (CSS, JS, images)
+    │   │   ├── /templates/     # HTML templates
+    │   │   ├── /models.py      # Django models (Course, User, etc.)
+    │   │   ├── /views.py       # Views for handling requests and rendering templates
+    │   │   ├── /urls.py        # URL patterns for the courses app
+    │   │   └── /admin.py       # Django admin configuration
+    │   │
+    │   ├── /static/            # Global static files for the project
+    │   ├── /templates/         # Global templates (base.html, etc.)
+    │   ├── /settings.py        # Django settings (including database, installed apps, etc.)
+    │   ├── /urls.py            # Global URL patterns for the project
+    │   └── /wsgi.py            # WSGI application entry point
+    │
+    ├── /db.sqlite3             # Database file (SQLite by default)
+    ├── manage.py               # Django management script
+    ├── README.md               # Readme file
+    ├── AUTHOR                  # Author file
+    └── .gitignore              # Git ignore file
 ```
-
-## 📧 Newsletter Subscription
-
-The website offers a feature where users can subscribe to daily weather updates via email. You can implement this by integrating a service like MailChimp or sending emails through your backend server using Python’s smtplib or Node’s nodemailer.
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## 👥 Author
 
