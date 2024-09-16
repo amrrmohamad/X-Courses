@@ -19,19 +19,19 @@ Responsive Design: Fully functional on both mobile and desktop platforms.
 
 ## 🛠 Tech Stack
 
-- Frontend:
-    **HTML5**
-    **CSS3 (Bootstrap or Custom CSS)**
-    **JavaScript (jQuery dynamic UI)**
+1. **Frontend:**
+    - HTML5
+    - CSS3 (Bootstrap or Custom CSS)
+    - JavaScript (jQuery dynamic UI)
 
-- Backend:
-    **Flask (Python)**
+2. **Backend:**
+    - Flask (Python)
 
-- APIs:
-    **OpenWeatherMap or WeatherAPI for fetching real-time weather data.**
+3. **APIs:**
+    - OpenWeatherMap or WeatherAPI for fetching real-time weather data.
 
-- Database (Optional):
-    **PostgreSQL or MySQL for storing user data (e.g., newslette subscriptions).**
+4. **Database (Optional):**
+    - PostgreSQL or MySQL for storing user data (e.g., newslette subscriptions).
 
 ## 🖥️ Installation Instructions
 
