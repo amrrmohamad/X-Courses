@@ -19,19 +19,19 @@ Responsive Design: Fully functional on both mobile and desktop platforms.
 
 ## 🛠 Tech Stack
 
-- **Frontend**:
-    HTML5
-    CSS3 (Bootstrap or Custom CSS)
-    JavaScript (jQuery dynamic UI)
+- Frontend:
+    **HTML5**
+    **CSS3 (Bootstrap or Custom CSS)**
+    **JavaScript (jQuery dynamic UI)**
 
-- **Backend**:
-    Flask (Python)
+-Backend:
+    **Flask (Python)**
 
-- **APIs**:
-    OpenWeatherMap or WeatherAPI for fetching real-time weather data.
+- APIs:
+    **OpenWeatherMap or WeatherAPI for fetching real-time weather data.**
 
-- **Database (Optional)**:
-    PostgreSQL or MySQL for storing user data (e.g., newsletter subscriptions).
+- Database (Optional):
+    **PostgreSQL or MySQL for storing user data (e.g., newslette subscriptions).**
 
 ## 🖥️ Installation Instructions
 
@@ -81,21 +81,21 @@ Newsletter Subscription: Users can sign up to receive periodic weather updates d
 
 ```bash
     X-weather/
-    │
+    |
     ├── static/
-    │   |── css/
-    |   |    |── style.css
-    |   |    |── login.css
+    |   |── css/
+    |   |    ├── style.css
+    |   |    ├── login.css
     |   |    └── signup.css
-    │   ├── js/
+    |   ├── js/
     |   |    └── script.js
-    │   └── images/
-    │
+    |   └── images/
+    |
     ├── templates/
-    |   |── login.html
-    |   |── signup.html
-    │   └── index.html
-    │
+    |   ├── login.html
+    |   ├── signup.html
+    |   └── index.html
+    |
     ├── app.py
     ├── database.py (if using a database)
     ├── README.md
@@ -112,9 +112,8 @@ This project is licensed under the MIT License.
 
 ## 👥 Author
 
-1. **add author here.
-2. **add author here.
-3. **add author here.
-4. **add author here.
-5. **add author here.
-
+1. ** add author here.
+2. ** add author here.
+3. ** add author here.
+4. ** add author here.
+5. ** add author here.
