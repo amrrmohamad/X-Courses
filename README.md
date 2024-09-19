@@ -1,4 +1,4 @@
-# 📚 X-Courses Website
+# 🎓 E-Learning Platform
 
 A modern and responsive website for offering online courses, allowing users to search, enroll, and track their progress through various educational content. This platform is designed for both learners and instructors to create a seamless online learning experience.
 
@@ -8,41 +8,38 @@ A modern and responsive website for offering online courses, allowing users to s
 
 ## 🎯 Features
 
+### **General Features**
+1. **User Authentication:**
+   - Secure login, signup, and logout functionality.
+2. **Responsive Design:**
+   - Fully responsive across mobile, tablet, and desktop devices.
+3. **Search & Filter:**
+   - Search for courses by categories, difficulty levels, and instructor.
+4. **Integrated Messaging:**
+   - Allows students and instructors to communicate directly within the platform.
+
+### **For Students:**
 1. **User-Friendly Interface:**
-    - Easy navigation for users to find, enroll, and access courses.
-2. **Course Listings:**
-    - Search and filter courses by categories, difficulty, and instructor.
-3. **Detailed Course Pages:**
-    - Each course has a dedicated page with syllabus, price, reviews, and instructor bio.
-4. **Responsive Design:**
-    - Fully responsive design for mobile, tablet, and desktop users.
-5. **User Authentication:**
-    - Secure login and registration for students and instructors.
-6. **Progress Tracking:**
-    - Track learning progress with completion certificates upon finishing courses.
-7. **Instructor Dashboard:**
-    - Instructors can manage courses, view student progress, and analyze performance.
-8. **Payments:**
-    - Secure payment integration for course enrollment.
+   - Simple navigation to browse and search for courses.
+2. **Detailed Course Pages:**
+   - View in-depth course descriptions, learning materials, and progress.
+3. **Progress Tracking:**
+   - Monitor progress throughout the course and stay on track with learning goals.
 
-## 🚀 Technologies Used
+### **For Instructors:**
+1. **Instructor Dashboard:**
+   - Manage course creation, updates, and enrolled students with a specialized dashboard.
+2. **Add Course Materials:**
+   - Upload course materials such as videos, PDFs, and quizzes.
+3. **Track Student Progress:**
+   - View the progress of enrolled students.
 
-1. **Frontend:**
-    - HTML5
-    - CSS3 (Bootstrap or Custom CSS)
-    - JavaScript (jQuery dynamic UI)
+## 🛠️ Tech Stack
 
-2. **Backend:**
-    - Django (Python)
-
-3. **Payment Gateway:**
-    - Stripe/PayPal integration for course purchases.
-
-4. **Database (Optional):**
-    - PostgreSQL for storing user data.
-
-5. **Authentication:**
-    - OAuth2 or JWT-based user authentication.
+- **Backend:** Django (Python)
+- **Frontend:** HTML, CSS, JavaScript
+- **Database:** PostgreSQL
+- **Version Control:** Git/GitHub
 
 ## 🛠️ Installation & Setup
 
