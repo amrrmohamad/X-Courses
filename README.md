@@ -26,14 +26,6 @@ A modern and responsive website for offering online courses, allowing users to s
 3. **Progress Tracking:**
    - Monitor progress throughout the course and stay on track with learning goals.
 
-### **For Instructors:**
-1. **Instructor Dashboard:**
-   - Manage course creation, updates, and enrolled students with a specialized dashboard.
-2. **Add Course Materials:**
-   - Upload course materials such as videos, PDFs, and quizzes.
-3. **Track Student Progress:**
-   - View the progress of enrolled students.
-
 ## 🛠️ Tech Stack
 
 - **Backend:** Django (Python)
