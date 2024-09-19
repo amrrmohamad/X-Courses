@@ -1,4 +1,4 @@
-<h1>📚 X-Courses Website</h1>
+# 📚 X-Courses Website # 4
 
 A modern and responsive website for offering online courses, allowing users to search, enroll, and track their progress through various educational content. This platform is designed for both learners and instructors to create a seamless online learning experience.
 
@@ -68,7 +68,7 @@ Step 3: Run the Application
 ```
 
 Step 5: Access the Website
-    Open your browser and go to <a herf="http://localhost:5000">run-server</a> (Django).
+    Open your browser and go to <http://localhost:5000> (Django).
 
 ## 🤝 Contributing
 
