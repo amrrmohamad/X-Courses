@@ -9,6 +9,7 @@ A modern and responsive website for offering online courses, allowing users to s
 ## 🎯 Features
 
 ### **General Features**
+
 1. **User Authentication:**
    - Secure login, signup, and logout functionality.
 2. **Responsive Design:**
@@ -19,6 +20,7 @@ A modern and responsive website for offering online courses, allowing users to s
    - Allows students and instructors to communicate directly within the platform.
 
 ### **For Students:**
+
 1. **User-Friendly Interface:**
    - Simple navigation to browse and search for courses.
 2. **Detailed Course Pages:**
@@ -27,6 +29,7 @@ A modern and responsive website for offering online courses, allowing users to s
    - Monitor progress throughout the course and stay on track with learning goals.
 
 ### **For Instructors:**
+
 1. **Instructor Dashboard:**
    - Manage course creation, updates, and enrolled students with a specialized dashboard.
 2. **Add Course Materials:**
