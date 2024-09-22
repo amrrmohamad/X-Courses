@@ -3,9 +3,13 @@ from .models import Course,Feedback
 from .forms import CourseForm , CustomUserCreationForm, FeedbackForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User 
-from django.contrib.auth import login, logout
+from django.contrib.auth import authenticate , login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.db.models import Q 
+from django.contrib import messages
+
+def index(request):
+    return render(request, 'index.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -14,17 +18,17 @@ def login_view(request):
             user = form.get_user()
             login(request, user)
             
-            # Set session to expire in 7 days
-            request.session.set_expiry(7 * 24 * 60 * 60)  
-
-            if user.is_staff:
-                return redirect('course_list')  # Redirect to admin home
+            if user.is_staff:  
+                return redirect('create_course')  
             else:
-                return redirect('course_list')  # Redirect to client page
+                return redirect('course_list')  
+        else:
+            messages.error(request, 'Invalid credentials')  
     else:
-        form = AuthenticationForm()
-    
+        form = AuthenticationForm()  
+
     return render(request, 'registration/login.html', {'form': form})
+
 
 def signup(request):
     if request.method == 'POST':
@@ -37,9 +41,9 @@ def signup(request):
             else:
                 user.is_staff = False
             user.save()
-            return redirect('login')  # Redirect to login after signup
+            return redirect('login')  
     else:
-        form = CustomUserCreationForm()  # Create a new form instance for GET requests
+        form = CustomUserCreationForm()  
 
     return render(request, 'registration/signup.html', {'form': form}) 
 
@@ -52,7 +56,7 @@ def login_view(request):
             if user.is_staff:
                 return redirect('create_course')  
             else:
-                return redirect('client_page')  # Redirect to client page
+                return redirect('client_page')  
     else:
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
@@ -60,13 +64,13 @@ def login_view(request):
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('login')  # Redirect to login after logout
+        return redirect('login')  
 
 
 @login_required
 def create_course(request):
     if request.user.studentprofile.role != 'admin':
-        return redirect('course_list')  # Redirect students to course list if they're not admin
+        return redirect('course_list')  
 
     if request.method == 'POST':
         form = CourseForm(request.POST)
