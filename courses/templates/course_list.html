@@ -1,0 +1,21 @@
+<form method="GET" action="{% url 'course_list' %}">
+    <input type="text" name="q" placeholder="Search by title" value="{{ query }}">
+    
+    <select name="category">
+        <option value="">All Categories</option>
+        <option value="math" {% if category == 'math' %}selected{% endif %}>Math</option>
+        <option value="science" {% if category == 'science' %}selected{% endif %}>Science</option>
+        <!-- Add more categories -->
+    </select>
+
+    <select name="level">
+        <option value="">All Levels</option>
+        <option value="beginner" {% if level == 'beginner' %}selected{% endif %}>Beginner</option>
+        <option value="intermediate" {% if level == 'intermediate' %}selected{% endif %}>Intermediate</option>
+        <option value="advanced" {% if level == 'advanced' %}selected{% endif %}>Advanced</option>
+    </select>
+
+    <input type="text" name="instructor" placeholder="Instructor" value="{{ instructor }}">
+    
+    <button type="submit">Search</button>
+</form>
