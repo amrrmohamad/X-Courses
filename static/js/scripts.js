@@ -5,12 +5,13 @@ const newsContainer = document.querySelector('.news-grid');
 // Fetch the latest news
 async function fetchNews() {
     const url = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${apiKey}`;
+    
     try {
         const response = await fetch(url);
         const data = await response.json();
 
         if (data.status === "ok") {
-            displayNews(data.articles);
+            displayNews(data.articles.slice(0, 3)); // Limit to 3 articles
         } else {
             console.error("Error fetching news:", data.message);
         }

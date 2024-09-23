@@ -1,7 +1,7 @@
 /* Footer Section */
 footer {
-    background-color: #0d0d0d;
-    color: #ccc;
+    background-color: #f1f1f1;
+    color: #340163;
     padding: 60px 0;
     text-align: left;
 }
@@ -23,7 +23,7 @@ footer {
 
 .footer-about h3 {
     font-size: 22px;
-    color: #f57c00;
+    color: #340163;
     margin-bottom: 20px;
 }
 
@@ -34,7 +34,7 @@ footer {
 }
 
 .footer-about a {
-    color: #f57c00;
+    color: #340163;
     text-decoration: none;
 }
 
@@ -55,7 +55,7 @@ footer {
 
 .footer-links h3 {
     font-size: 22px;
-    color: #f57c00;
+    color: #340163;
     margin-bottom: 20px;
 }
 
@@ -69,14 +69,14 @@ footer {
 }
 
 .footer-links ul li a {
-    color: #ccc;
+    color: #340163;
     text-decoration: none;
     font-size: 15px;
     transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-    color: #f57c00;
+    color: #b481e0;
 }
 
 /* Social Media Icons */
@@ -87,7 +87,7 @@ footer {
 
 .footer-social h3 {
     font-size: 22px;
-    color: #f57c00;
+    color: #340163;
     margin-bottom: 20px;
 }
 
@@ -111,13 +111,12 @@ footer {
 }
 
 .social-icons a:hover {
-    background-color: #f57c00;
+    background-color: #340163;
 }
 
 /* Copyright Section */
 .footer-bottom {
-    background-color: #000;
-    color: #777;
+    color: #4d4d4d;
     padding: 20px 0;
     text-align: center;
     font-size: 14px;
