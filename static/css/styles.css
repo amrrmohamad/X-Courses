@@ -86,7 +86,7 @@ hr {
 }
 
 .hero-btn {
-    background-color: #f39c12;
+    background-color: #e7940f;
     color: #fff;
 }
 
@@ -105,57 +105,206 @@ hr {
     color: #f39c12;
 }
 
+/* partners section */
+.partners-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.partners-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.logo-item img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%); /*Optional: to give a grayscale effect*/
+    transition: filter 0.3s ease;
+}
+
+.logo-item img:hover {
+    filter: none; /* Removes the grayscale on hover */
+}
+
+/* feature section  */
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.features-header {
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #f5faff;
+}
+
+.features-header h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f3f3f3;
+    padding: 120px 20px;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature i {
+    font-size: 40px;
+    color: #340163;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* benefits-section */
+.benefits-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: left;
+}
+
+.benefits-section .left-section {
+    width: 50%;
+    margin-left: 100px;
+}
+
+.benefits-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.benefits-section p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.benefits-section .cta-btn {
+    padding: 10px 20px;
+    border: 2px solid #340163;
+    background-color: transparent;
+    color: #340163;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.benefits-section .cta-btn:hover {
+    background-color: #340163;
+    color: #fff;
+}
+
+.benefits-section .image-section {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin: 20px;
+}
+
+.image-section img {
+    max-width: 300px;
+    border-radius: 10px;
+    zoom: 2.1;
+}
+
+/* Trending Categories */
 /* Trending Categories */
 .trending-categories {
     padding: 60px 0;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #45033a, #2a0345);
 }
 
 .trending-categories h2 {
+    color: #ffffff;
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
 }
 
+.trending-categories p {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #d1d0d0;
+}
+
 .category-grid {
     display: flex;
     justify-content: space-around;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 25px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    position: relative;
 }
 
-.category-item1, .category-item2, .category-item3 {
-	color: #ffffff;
-	background-color:#ffffff;
-    border-radius: 2px;
-    padding: 80px;
+.category-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.category-grid::-webkit-scrollbar-thumb {
+    background-color: #18012e;
+    border-radius: 10px;
+}
+
+.category-grid a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.category-item {
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 50px 20px;
     text-align: center;
     flex: 1;
-    max-width: 300px;
-	transition: transform 0.3s ease;
+    width: 300px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.category-item1 {
-	background: url('../img/OIP.jpg') no-repeat center center/cover;
-}
-.category-item2 {
-	background: url('../img/OIP\ \(1\).jpg') no-repeat center center/cover;
-}
-.category-item3 {
-	background: url('../img/download.jpg') no-repeat center center/cover;
-}
-
-.category-item1::before {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #220030f5);
-}
-
-.category-item1:hover {
+.category-item:hover {
     transform: translateY(-10px);
 }
 
 .category-item h3 {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.category-item i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 /* Featured Courses */
@@ -290,74 +439,73 @@ hr {
 }
 
 /* News Section */
-
 .latest-news {
-    padding: 40px 0;
-    background-color: #f5f5f5;
+    padding: 50px 0;
     text-align: center;
+    background-color: #f9f9f9;
 }
 
 .latest-news h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    color: #333;
 }
 
-.sub-heading {
+.latest-news p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
     color: #666;
 }
 
-/* Adjusting to only 3 items with a more compact layout */
 .news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Always show 3 items */
-    gap: 15px;
-    justify-items: center;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 20px;
 }
 
+/* Styling for each individual news item */
 .news-item {
     background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+.news-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.news-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 15px 0;
+}
+
+.news-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    height: 50px;
     overflow: hidden;
-    transition: transform 0.3s ease;
-    width: 90%; /* Slightly smaller */
-    max-width: 280px; /* Limit max size */
+    text-overflow: ellipsis;
+}
+
+.news-item a {
+    display: inline-block;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .news-item:hover {
     transform: translateY(-5px);
 }
-
-.news-item img {
-    width: 100%;
-    height: 150px; /* Reduce height for more compact view */
-    object-fit: cover;
-}
-
-.news-item h3 {
-    font-size: 1.1rem;
-    margin: 10px 10px;
-    color: #333;
-}
-
-.news-item a {
-    display: block;
-    text-align: center;
-    padding: 8px;
-    background-color: #f57c00;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 0 0 8px 8px;
-    font-weight: bold;
-}
-
-.news-item a:hover {
-    background-color: #d86a00;
-}
-
-
 
 /* Instructors Section */
 .instructors {
@@ -410,12 +558,13 @@ hr {
 .countdown-newsletter {
     padding: 60px 0;
     background-color: #f39c12;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
 }
 
 .countdown-newsletter h2 {
     font-size: 32px;
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
 }
 
@@ -429,8 +578,13 @@ hr {
 
 .countdown p span {
     display: block;
+    color: #ffffff;
     font-size: 36px;
     font-weight: bold;
+}
+
+.countdown p {
+    color: #ffffff;
 }
 
 .newsletter input {
