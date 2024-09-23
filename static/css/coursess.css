@@ -1,0 +1,151 @@
+/**Global Styles**/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+.header {
+    color: #fff;
+    background-image: url(../studying.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 9999;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    height: 100vh;
+
+}
+.tag{
+    position: relative;
+}
+.tag h1{
+    position: absolute;
+    font-size: 100px;
+    font-weight: 700;
+    color: black;
+   left: 700px;
+   /* transform: translateX(-50%); */
+   top: 350px;
+}
+.nav-link{
+    color: white!important;
+    font-size: 25px !important;
+    position: relative;
+    right: 300px;
+    margin-left: 40px;
+}
+.nav-link:hover{
+   color: orange !important;
+}
+.dropdown-menu{
+    position: absolute !important;
+    left:  -250px !important;
+}
+.dropdown-item{
+    color: black !important;
+    font-size: 20px !important;
+}
+.dropdown-item:hover{
+    color: orange !important;
+    background-color: black !important;
+}
+
+/* Course List Section */
+.course-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    position: relative;
+    top: 200px;
+}
+
+.course-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.course-item:hover {
+    transform: scale(1.05);
+}
+
+.course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-content {
+    padding: 15px;
+}
+
+.course-link {
+    font-size: 1.5em;
+    color: #3498db;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.course-link:hover {
+    color: #2980b9;
+}
+
+.course-description {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #888;
+}
+@media screen and (max-width:1024px){
+    .tag h1{
+        font-size: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 200px;
+        color: white;
+    }
+    .nav-link{
+        font-size: 15px !important;
+        position: relative;
+        right: 100px;
+        margin-left: 40px;
+    }
+    .dropdown-menu{
+        position: absolute !important;
+        left:  -100px !important;
+    }
+    .dropdown-item{
+        color: black !important;
+        font-size: 15px !important;
+    }
+    .dropdown-item:hover{
+        color: orange !important;
+        background-color: black !important;
+    }
+    
+}
