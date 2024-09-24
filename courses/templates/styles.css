@@ -1,0 +1,122 @@
+.sidebar {
+    background: linear-gradient(to bottom, #45033a, #2a0345);
+    height: 100vh;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.teacher-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    width: 350px;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* تغيير لون البطاقة عند الضغط على الحفظ */
+.teacher-card.saved {
+    background-color: #6b3f7b; /* اللون الجديد للبطاقة */
+    color: #ffffff;
+}
+
+.saved {
+    background-color: #6c757d;
+  }
+
+.saved-icon.saved {
+    color: #ffffff; /* اللون الجديد للأيقونة */
+}
+
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.card-header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: -8px;
+}
+.teacher-info {
+    margin-top: 5px;
+    }
+
+.teacher-info h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.teacher-info .badge {
+    background-color: #f59e0b;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: 10px;
+    color: white;
+    margin-left: 5px;
+}
+
+.saved-icon {
+    color: #6c757d; /* اللون الافتراضي */
+}
+
+.saved-icon:active {
+    color: #ffffff;
+}
+
+/* Footer style */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.save-btn {
+    border: none;
+    background-color: transparent;
+    color: #6c757d;
+}
+
+.save-btn:hover {
+    color: #495057;
+}
+
+/* Slider container with curved edges */
+.slider-container {
+    overflow: hidden;
+    border-radius: 20px; /* منحنيات للسلايدر */
+}
+
+.slider-container .row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+/* تأثير الضغط */
+.save-btn:active {
+    color: #ffffff;
+}
+.saved-icon {
+    position: absolute; /* لجعل الأيقونة موضوعة فوق الزاوية اليمنى */
+    top: 10px; /* المسافة من أعلى البطاقة */
+    right: 10px; /* المسافة من يمين البطاقة */
+    background-color: white; /* لون الخلفية للأيقونة */
+    border-radius: 50%; /* لجعل الأيقونة دائرية */
+    padding: 5px; /* إضافة مساحة داخلية */
+    font-size: 15px; /* حجم الأيقونة */
+    border: 1px solid #e2e8f0; /* إضافة خط مدور حول الأيقونة */
+}
+
+
+
+
+
