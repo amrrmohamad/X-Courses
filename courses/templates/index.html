@@ -5,7 +5,9 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X Courses Education</title>
+    <title>E learning Courses - Education</title>
+    <!-- icon website -->
+    <link rel="icon" href="../../static/img/code.png">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
@@ -19,33 +21,34 @@
         <div class="header-container">
             <!-- Logo -->
             <div class="logo">
-                <img src="#" alt="Skola Logo">
+                <i class="fas fa-code" aria-hidden="true"></i>
+                <span>E-learning</span>
             </div>
-
+    
             <!-- Navigation Bar -->
-            <nav class="navbar" role="navigation">
+            <nav class="navbar" role="navigation" aria-label="Main Navigation">
                 <ul class="nav-links" role="menubar">
-                    <li role="menuitem"><a href="#courses">Courses</a></li>
-                    <li role="menuitem"><a href="#categories">Categories</a></li>
-                    <li role="menuitem"><a href="#us">About Us</a></li>
+                    <li role="menuitem"><a href="#courses" aria-label="Courses">Courses</a></li>
+                    <li role="menuitem"><a href="#categories" aria-label="Categories">Categories</a></li>
+                    <li role="menuitem"><a href="#us" aria-label="About Us">About Us</a></li>
                     <li role="menuitem">
-                        <a href="#">Users</a>
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Users</a>
                         <!-- Dropdown Menu -->
-                        <ul class="dropdown">
+                        <ul class="dropdown" aria-label="User Options">
                             <li><a href="#Instructors">Instructors</a></li>
                             <li><a href="#Events">Events</a></li>
                             <li><a href="#News">News</a></li>
                         </ul>
                     </li>
                 </ul>
-
+    
                 <!-- Call to Action Button -->
-                <a href="{% url 'login' %}">
+                <a href="{% url 'login' %}" aria-label="Log In">
                     <button class="cta-btn">Log In</button>
                 </a>
-
+    
                 <!-- Mobile Menu Icon -->
-                <div class="mobile-menu">
+                <div class="mobile-menu" aria-label="Open Menu" tabindex="0">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -122,7 +125,7 @@
         </div>
         <div class="image-section">
             <!-- change this -->
-            <img src="../static/img/Image.png" alt="Person Image">
+            <img src="../../static/img/Image.png" alt="Person Image">
         </div>
     </section>
     <hr>
@@ -171,24 +174,47 @@
     <!-- Featured Courses Section -->
     <section class="featured-courses" id="courses">
         <div class="container">
+            <!-- change all those path -->
             <h2>Featured Courses</h2>
             <p>Discover Your Perfect Program In Our Courses</p>
             <div class="course-grid">
-                <div class="course-card">
-                    <h3>Course Title 1</h3>
-                    <p>$129.99</p>
-                </div>
-                <div class="course-card">
-                    <h3>Course Title 2</h3>
-                    <p>$89.99</p>
-                </div>
-                <!-- i add another course -->
-                <div class="course-card">
-                    <h3>Course Title 3</h3>
-                    <p>$199.99</p>
-                </div>
+                <a href="https://www.coursera.org/learn/the-structured-query-language-sql" target="_blank">
+                    <div class="course-card">
+                        <img src="../../static/img/SQL_Logo-copy.png" alt="course">
+                        <i class="fab fa-microsoft"> <span>microsoft</span></i>
+                        <h3>The Structured Query Language (SQL)</h3>
+                        <p>Beginner - Course</p>
+                    </div>
+                </a>
+                <a href="https://www.coursera.org/learn/leading-teams-developing-as-a-leader" target="_blank">
+                    <div class="course-card">
+                        <img src="../../static/img/GIES_Icon_B.png" alt="course">
+                        <i class="fab fa-google"> <span>google</span></i>
+                        <h3>Leading Teams: Developing as a Leader</h3>
+                        <p>Beginner - Course</p>
+                    </div>
+                </a>
+                <a href="https://www.coursera.org/specializations/graphic-design" target="_blank">
+                    <div class="course-card">
+                        <img src="../../static/img/design.png" alt="course">
+                        <i class="fab fa-c"> <span>coursera</span></i>
+                        <h3>Data Science: Foundations using R Specialization</h3>
+                        <p>Beginner - Course</p>
+                    </div>
+                </a>
+                <a href="https://www.coursera.org/specializations/data-science-foundations-r" target="_blank">
+                    <div class="course-card">
+                        <img src="../../static/img/Data-Science-Fundementals-in-Research.png" alt="course">
+                        <i class="fab fa-google"> <span>google</span></i>
+                        <h3>Data Science: Foundations using R Specialization</h3>
+                        <p>Beginner - Course</p>
+                    </div>
+                </a>
                 <!-- More courses... -->
             </div>
+
+            <button class="course-btn">Show More Courses</button>
+
         </div>
     </section>
     <hr>
@@ -279,7 +305,7 @@
         <div class="footer-container">
             <!-- About Company Section -->
             <div class="footer-about">
-                <h3>X Courses</h3>
+                <img src="../../static/img/foot_icon.png" alt="icon">
                 <p>
                     We offer the best courses in technology, business, and personal development.
                 </p>

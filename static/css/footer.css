@@ -28,18 +28,25 @@ footer {
 }
 
 .footer-about p {
+    padding-left: 30px;
     font-size: 15px;
     line-height: 1.8;
     margin-bottom: 20px;
 }
 
 .footer-about a {
+    padding-left: 30px;
     color: #340163;
     text-decoration: none;
 }
 
 .footer-about a:hover {
     text-decoration: underline;
+}
+
+.footer-about img {
+    padding-left: 30px;
+    height: 100px;
 }
 
 /* Footer Links */
