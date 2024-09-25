@@ -1,8 +1,0 @@
-<h1>Edit Profile</h1>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <textarea name="bio" placeholder="Bio">{{ profile.bio }}</textarea>
-    <input type="file" name="profile_picture">
-    <button type="submit">Save</button>
-</form>
-<a href="{% url 'view_profile' %}">Cancel</a>

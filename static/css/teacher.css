@@ -145,6 +145,7 @@ body {
     height: 350px;
     transition: transform 0.3s ease;
     text-align: left;
+    overflow: hidden;
 }
 
 .course-card i {
@@ -182,6 +183,10 @@ body {
 
 .course-card:hover {
     transform: translateY(-10px);
+}
+
+.container {
+    margin: 0px; 
 }
 
 @keyframes fadeIn {

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Course Details{% endblock %}
+{% block content %}
+<div class="container-a" style="margin-left: 130px;">
+    <h2>{{ course.name }}</h2>
+    <p>{{ course.description }}</p>
+    <h4>Teacher: {{ course.teacher }}</h4>
+
+    <div class="mt-4">
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}
