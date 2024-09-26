@@ -79,11 +79,10 @@ body {
 .card-header {
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 15px;
     background-color: #f9f9f9;
     border-bottom: 1px solid #ddd;
     animation: fadeIn 1s ease-in-out;
-    height: 150px;
 }
 
 .card-header img {
@@ -146,6 +145,7 @@ body {
     height: 350px;
     transition: transform 0.3s ease;
     text-align: left;
+    overflow: hidden;
 }
 
 .course-card i {
@@ -183,6 +183,10 @@ body {
 
 .course-card:hover {
     transform: translateY(-10px);
+}
+
+.container {
+    margin: 0px; 
 }
 
 @keyframes fadeIn {

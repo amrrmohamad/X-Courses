@@ -43,7 +43,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('landing_page')
 
 @login_required
 def dashboard(request):
@@ -71,11 +71,11 @@ def dashboard(request):
 
 @login_required
 def teacher(request):
-    return redirect('teacher')
+    return render(request, 'teacher.html')
 
 @login_required
 def courses(request):
-    return redirect('courses')
+    return render(request, 'courses.html')
 
 
 @login_required

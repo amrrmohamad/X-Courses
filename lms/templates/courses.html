@@ -26,30 +26,46 @@
 			<hr>
 			<ul class="nav nav-pills flex-column mb-auto">
 				<li class="nav-item">
-					<a href="index.html" class="nav-link text-light active" aria-current="page" style="background-color: #3d9fcc00;">
+					<a href="{% url 'landing_page' %}" class="nav-link text-light active" aria-current="page" style="background-color: #3d9fcc00;">
 						<i class="fas fa-home"></i> Home
 					</a>
 				</li>
+				{% if not user_profile.is_student %}
+					<li>
+						<a href="{%url 'dashboard' %}" class="nav-link text-light">
+							<i class="fas fa-book"></i> Courses
+						</a>
+					</li>
+				{% else %}
+					<li>
+						<a href="{%url 'dashboard' %}" class="nav-link text-light" style="background-color: #3d9fcc;">
+							<i class="fas fa-book"></i> Courses
+						</a>
+					</li>
+				{% endif %}
 				<li>
-					<a href="#" class="nav-link text-light" style="background-color: #3d9fcc;">
-						<i class="fas fa-book"></i> Courses
-					</a>
-				</li>
-				<li>
-					<a href="teacher.html" class="nav-link text-light">
+					<a href="{% url 'teacher' %}" class="nav-link text-light">
 						<i class="fas fa-chalkboard-teacher"></i> Teachers
 					</a>
 				</li>
 				<li>
-					<a href="./index.html#massage" class="nav-link text-light">
+					<a href="{% url 'landing_page' %}#massage" class="nav-link text-light">
 						<i class="fas fa-envelope"></i> Massage
 					</a>
 				</li>
+				{% if not user_profile.is_student %}
+				<li>
+					<a href="#" class="nav-link text-light" style="background-color: #3d9fcc;">
+						<i class="fas fa-chart-bar"></i> All Courses
+					</a>
+				</li>
+				{% else %}
 				<li>
 					<a href="#" class="nav-link text-light">
 						<i class="fas fa-chart-bar"></i> Analytics
 					</a>
 				</li>
+				{% endif %}
 				<li>
 					<a href="#" class="nav-link text-light">
 						<i class="fas fa-money-bill-wave"></i> Payments
@@ -69,7 +85,7 @@
 					<li>
 						<hr class="dropdown-divider">
 					</li>
-					<li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sign out</a></li>
+					<li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Sign out</a></li>
 				</ul>
 			</div>
 		</div>
@@ -319,6 +335,26 @@
 						</div>
 					</div>
 					<br>
+					<h2> E-learning Courses</h2>
+					<br>
+					<div class="slider-container d-flex align-items-center">
+						<div class="course-grid" style="display: ruby;">
+							{% for course in available_courses %}
+							<a href="#">
+								<div class="course-card" style="overflow-y:auto; margin: 10px;">
+									<img src="../static/img/foot_icon.png" alt="course">
+									<i class="fab fa-e"> <span>E-learning</span></i>
+									<h3 class="card-title">{{ course.title }}</h3>
+									<!--<p class="card-text">{{ course.description }}</p>-->
+									<a href="{% url 'enroll_course' course.id %}" class="btn btn-outline-dark">Enroll Now</a>
+								</div>
+								{% empty %}
+								<p>No available courses at the moment.</p>
+								{% endfor %}
+							</a>
+						</div>
+						<br>
+					</div>
 				</section>
 			</div>
 		</div>
