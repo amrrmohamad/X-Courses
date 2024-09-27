@@ -309,8 +309,18 @@
             <p>Maybe This Is Important, Take A Look At Upcoming Events</p>
             <div class="event-grid">
                 <div class="event-item">
-                    <p>06 April</p>
+                    <p>11 April</p>
                     <h3>Workshop: Understanding Cloud Computing</h3>
+                    <p>Free</p>
+                </div>
+                <div class="event-item">
+                    <p>06 Nov</p>
+                    <h3>Workshop: Understanding Arduino</h3>
+                    <p>Free</p>
+                </div>
+                <div class="event-item">
+                    <p>18 April</p>
+                    <h3>Workshop: Quantum Computing</h3>
                     <p>Free</p>
                 </div>
                 <!-- More events... -->
@@ -417,22 +427,70 @@
         </div>
     </section>
 
+    <style>
+        .countdown-newsletter {
+            text-align: center;
+            padding: 20px;
+        }
+    
+        .countdown p {
+            display: inline-block;
+            margin: 10px;
+            font-size: 18px;
+        }
+    
+        #offer-ended {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(38, 0, 73);
+            display: none;
+            /* Initially hidden */
+        }
+    </style>
+    
     <!-- Countdown & Newsletter Section -->
     <section class="countdown-newsletter" id="massage">
         <div class="container">
             <h2>Register now for a 50% discount</h2>
             <div class="countdown">
-                <p><span>40</span> Days</p>
-                <p><span>59</span> Hours</p>
-                <p><span>27</span> Minutes</p>
-                <p><span>10</span> Seconds</p>
+                <p><span id="days"></span> Days</p>
+                <p><span id="hours"></span> Hours</p>
+                <p><span id="minutes"></span> Minutes</p>
+                <p><span id="seconds"></span> Seconds</p>
             </div>
+            <div id="offer-ended">The offer has ended!</div>
             <form class="newsletter">
                 <input type="email" placeholder="Enter your email">
                 <button>Subscribe</button>
             </form>
         </div>
     </section>
+    
+    <script>
+        const targetDate = new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000).getTime();
+
+        const countdownInterval = setInterval(function () {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown').style.display = 'none';
+                document.getElementById('offer-ended').style.display = 'block';
+            }
+        }, 1000);
+    </script>
+
 
     <!-- Footer Section -->
     <footer>
