@@ -24,7 +24,12 @@ A modern and responsive website for offering online courses, allowing users to s
    -> Add More futers in Teachears Page
    -> Add More futers in students Pages
    -> edit README.md
-
+   # Abdelrahman Deyaa Fouad Eliwah
+   -> designed the teacher's page.
+   -> Design your own discount countdown code on the homepage.
+   -> Pop-up design when clicking on social media.
+   -> Designing some JavaScript codes for my websites.
+   -ظز
    
 ## 🎯 Features
 
