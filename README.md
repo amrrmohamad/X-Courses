@@ -29,7 +29,15 @@ A modern and responsive website for offering online courses, allowing users to s
    -> Design your own discount countdown code on the homepage.
    -> Pop-up design when clicking on social media.
    -> Designing some JavaScript codes for my websites.
-   -ظز
+   # Abdullah Mohamed Hussain Zidan
+   -> part of Back-End in project
+   -> make login , sign up in template 
+   -> add design in this pages
+   # Yousef bashir ahmed
+   -> make courses page in template
+   -> add design for this page 
+   -> add links of courses in page
+   
    
 ## 🎯 Features
 
