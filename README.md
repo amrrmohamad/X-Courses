@@ -109,6 +109,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 1. ** Amr Mohamad Bakr.
 2. ** Yousef Hany Mohamed.
-3. ** Abdelrahman Deyaa.
+3. ** Abdelrahman Deyaa Fouad Eliwah.
 4. ** Abdullah Mohamed Hussain Zidan.
 5. ** Yousef bashir ahmed.
