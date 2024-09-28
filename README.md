@@ -12,6 +12,20 @@ A modern and responsive website for offering online courses, allowing users to s
 
 [link Draw Database](https://drawsql.app/teams/yousef-hany-1/diagrams/e-learning)
 
+## Explain Project
+
+[video](https://drive.google.com/drive/folders/1x8FhD-I-WH7ei1iAr0wtPAWflpF3YOUj?usp=drive_link)  
+
+## works in project 
+
+   # Yousef Hani Mohamed
+   -> design DataBase
+   -> part of Back-End in project
+   -> Add More futers in Teachears Page
+   -> Add More futers in students Pages
+   -> edit README.md
+
+   
 ## 🎯 Features
 
 ### **General Features**
@@ -67,21 +81,7 @@ Step 3: Run the Application
 
 Step 5: Access the Website
     Open your browser and go to <http://localhost:5000> (Django).
-
-## Explain Project
-
-[video](https://drive.google.com/drive/folders/1x8FhD-I-WH7ei1iAr0wtPAWflpF3YOUj?usp=drive_link)  
-
-## works in project 
-
-   # Yousef Hani Mohamed
-   -> design DataBase
-   -> part of Back-End in project
-   -> Add More futers in Teachears Page
-   -> Add More futers in students Pages
-   -> edit README.md
    
-
 ## 🤝 Contributing
 
 Feel free to submit pull requests or issues for improving the website. We welcome contributions to add new features, enhance the design, or fix bugs.
