@@ -24,9 +24,18 @@ def register(request):
             user.save()
             user_profile = UserProfile(user=user, user_type=form.cleaned_data['user_type'])
             user_profile.save()
-            return redirect('login')
+            
+            # Log the user in after registration
+            login(request, user)
+            
+            # Redirect based on user type
+            if user_profile.is_teacher():
+                return redirect('teacher')  # Redirect teachers to the teacher page
+            else:
+                return redirect('dashboard')  # Redirect students to the dashboard
     else:
         form = RegistrationForm()
+    
     return render(request, 'register.html', {'form': form})
 
 def login_view(request):
@@ -71,7 +80,18 @@ def dashboard(request):
 
 @login_required
 def teacher(request):
-    return render(request, 'teacher.html')
+    user_profile = request.user.userprofile
+
+    if user_profile.is_teacher():
+        # Get the teacher's profile and any relevant info (courses, etc.)
+        created_courses = Course.objects.filter(created_by=user_profile)
+        context = {
+            'created_courses': created_courses,
+            'user_profile': user_profile,  # Pass the teacher's profile
+        }
+        return render(request, 'teacher.html', context)
+    else:
+        return redirect('dashboard')  # Non-teachers get redirected to the dashboard
 
 @login_required
 def courses(request):
