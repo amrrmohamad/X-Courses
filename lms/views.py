@@ -25,14 +25,13 @@ def register(request):
             user_profile = UserProfile(user=user, user_type=form.cleaned_data['user_type'])
             user_profile.save()
             
-            # Log the user in after registration
             login(request, user)
             
             # Redirect based on user type
             if user_profile.is_teacher():
-                return redirect('teacher')  # Redirect teachers to the teacher page
+                return redirect('teacher')  
             else:
-                return redirect('dashboard')  # Redirect students to the dashboard
+                return redirect('dashboard')  
     else:
         form = RegistrationForm()
     
@@ -44,7 +43,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('dashboard')  # Redirect to dashboard after login
+            return redirect('dashboard')  
     else:
         form = AuthenticationForm()
 
@@ -59,18 +58,23 @@ def dashboard(request):
     user_profile = request.user.userprofile
 
     if user_profile.is_student():
-        # Get courses the student is enrolled in
+        
         enrolled_courses = Enrollment.objects.filter(student=user_profile)
-        # Get available courses (not already enrolled in)
+       
         available_courses = Course.objects.exclude(enrollment__student=user_profile)
+        
+        all_teachers = UserProfile.objects.filter(user_type='teacher')
+        
         context = {
             'enrolled_courses': enrolled_courses,
             'available_courses': available_courses,
-            'user_profile': user_profile,  # Pass user profile for role checking
+            'user_profile': user_profile,  
+            'all_teachers': all_teachers,  
         }
     elif user_profile.is_teacher():
-        # Get all courses created by the teacher
+        
         created_courses = Course.objects.filter(created_by=user_profile)
+        available_courses = Course.objects.exclude(enrollment__student=user_profile)
         context = {
             'created_courses': created_courses,
             'user_profile': user_profile,
@@ -80,22 +84,54 @@ def dashboard(request):
 
 @login_required
 def teacher(request):
+    
     user_profile = request.user.userprofile
 
     if user_profile.is_teacher():
-        # Get the teacher's profile and any relevant info (courses, etc.)
+        
+        all_teachers = UserProfile.objects.filter(user_type='teacher')
+
         created_courses = Course.objects.filter(created_by=user_profile)
+
+        
         context = {
-            'created_courses': created_courses,
-            'user_profile': user_profile,  # Pass the teacher's profile
+            'created_courses': created_courses,  
+            'user_profile': user_profile,        
+            'all_teachers': all_teachers,               
         }
+
         return render(request, 'teacher.html', context)
     else:
-        return redirect('dashboard')  # Non-teachers get redirected to the dashboard
+        all_teachers = UserProfile.objects.filter(user_type='teacher')
+        
+        
+        all_students = UserProfile.objects.filter(user_type='student')
+
+        created_courses = Course.objects.filter(created_by=user_profile)
+
+        
+        context = {
+            'created_courses': created_courses,  
+            'user_profile': user_profile,        
+            'all_teachers': all_teachers,               
+        }
+        return render(request, 'student_teachers.html', context)
 
 @login_required
 def courses(request):
-    return render(request, 'courses.html')
+    user_profile = request.user.userprofile
+
+    available_courses = Course.objects.exclude(enrollment__student=user_profile)
+
+    created_courses = Course.objects.filter(created_by=user_profile)
+
+    context = {
+            'created_courses': created_courses,
+            'user_profile': user_profile,
+            'available_courses': available_courses
+        }
+
+    return render(request, 'courses.html',context)
 
 
 @login_required
@@ -107,7 +143,7 @@ def enroll_course(request, course_id):
         Enrollment.objects.get_or_create(student=user_profile, course=course)
         return redirect('dashboard')
     else:
-        return redirect('dashboard')  # Teachers cannot enroll in courses
+        return redirect('dashboard')  
 
 
 @login_required
