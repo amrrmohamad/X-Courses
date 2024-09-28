@@ -2,10 +2,6 @@
 
 A modern and responsive website for offering online courses, allowing users to search, enroll, and track their progress through various educational content. This platform is designed for both learners and instructors to create a seamless online learning experience.
 
-## 🌐 Live Demo
-
-[Insert your website's URL here]
-
 ## Draw DataBase: 
 
 ![image](https://github.com/user-attachments/assets/45568572-cb2a-4a85-99da-723644c26be9)
