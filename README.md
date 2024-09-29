@@ -33,6 +33,10 @@ A modern and responsive website for offering online courses, allowing users to s
    -> make courses page in template
    -> add design for this page 
    -> add links of courses in page
+   # Amr Mohamad Bakr
+   -> add design in all pages 
+   -> add animations in all pages
+   -> add little links to courses from coursera
    
    
 ## 🎯 Features
