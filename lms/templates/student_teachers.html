@@ -98,20 +98,41 @@
                     </div>
                 </div>
 
-                <h1>Welcome, {{ user_profile.user.username }}!</h1>
+                <br>
+                <h2>Welcome, {{ user_profile.user.username }}!</h2>
+                <hr>
                 <section class="p-4" style="animation: fadeIn 1s ease-in-out;">
                     <h1 style="color: rgb(77, 0, 116);">- Teachers</h1>
                     <br>
-                    <div class="row">
+                <style>
+                    .instructor-grid {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 40px;
+                    }
+                </style>
+                    <br>
+                    <div class="instructor-grid">
                         {% for teacher in all_teachers %}
-                        <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
-                                <!-- Course icon or image -->
-                                <img src="../static/img/foot_icon.png" class="card-img-top" alt="Teacher Profile Picture">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ teacher.user.username }}</h5>
-                                    <p class="card-text">{{ teacher.user.email }}</p>
-                                    <!-- Add more details like teacher's bio or courses taught here -->
+                        <div class="card-slider" style="width: 25%;">
+                            <div class="teacher-card">
+                                <div class="card-header">
+                                    <img src="../../static/img/teacher1.png" alt="Teacher">
+                                    <div class="teacher-info">
+                                        <h3 class="card-title">{{ teacher.user.username }}</h3>
+                                        <br>
+                                        <p>Development teacher</p>
+                                    </div>
+                                    <i class="fas fa-bookmark saved-icon"></i>
+                                </div>
+                                <p><i class="fas fa-graduation-cap"></i> Lessons conducted: 340</p>
+                                <p><i class="fas fa-book"></i> 12 Courses | <i class="fas fa-user-graduate"></i> 45 Students
+                                </p>
+                                <p class="card-text">{{ teacher.user.email }}</p>
+                                <p>Ready to unravel the complexities of supply, demand, and market forces?</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-warning"><i class="fas fa-fire"></i> $32/hr</span>
+                                    <a href="#" class="btn btn-outline-dark">View More</a>
                                 </div>
                             </div>
                         </div>
