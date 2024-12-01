@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock %}
+{% block content %}
+<br>
+<section class="p-4" style="animation: fadeIn 1s ease-in-out;">
+    <h1 style="color: rgb(77, 0, 116);">- {{ user_profile.user.username }}!</h1>
+    <p>Email: {{ user_profile.user.email }}</p>
+    <p>Role: {{ user_profile.get_user_type_display }}</p>
+
+    <h2 style="color: rgb(77, 0, 116);">- Profile Information</h2>
+    <ul>
+        <!-- user_profile.user.username -->
+        <li><strong>User Name: </strong> {{ teacher.user.username }}</li>
+        <li><strong>Email: </strong> {{ user_profile.user.email }}</li>
+        <li><strong>Role: </strong> {{ user_profile.get_user_type_display }}</li>
+    </ul>
+
+    <h2 style="color: rgb(77, 0, 116);">- Created Courses:</h2>
+    {% if created_courses %}
+        <ul>
+            {% for course in created_courses %}
+            <li><strong>{{ course.title }}</strong></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Haven't created any courses yet.</p>
+    {% endif %}
+</section>
+{% endblock %}

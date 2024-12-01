@@ -113,7 +113,8 @@ def teacher(request):
         context = {
             'created_courses': created_courses,  
             'user_profile': user_profile,        
-            'all_teachers': all_teachers,               
+            'all_teachers': all_teachers,
+            'all_student' : all_students,              
         }
         return render(request, 'student_teachers.html', context)
 
