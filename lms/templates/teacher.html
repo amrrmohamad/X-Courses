@@ -40,11 +40,6 @@
                         <i class="fas fa-chalkboard-teacher"></i> Teachers
                     </a>
                 </li>
-                <li>
-                    <a href="{% url 'landing_page' %}#massage" class="nav-link text-light">
-                        <i class="fas fa-envelope"></i> Massage
-                    </a>
-                </li>
                 {% if not user_profile.is_student %}
                 <li>
                     <a href="{% url 'courses' %}" class="nav-link text-light">
@@ -58,11 +53,19 @@
                     </a>
                 </li>
                 {% endif %}
+                {% if user_profile.is_student %}
                 <li>
-                    <a href="#" class="nav-link text-light">
-                        <i class="fas fa-money-bill-wave"></i> Payments
+                    <a href="{% url 'landing_page' %}#massage" class="nav-link text-light">
+                        <i class="fas fa-envelope"></i> Massage
                     </a>
                 </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'user_profile' %}" class="nav-link text-light">
+                        <i class="fas fa-i"></i> Information
+                    </a>
+                </li>
+                {% endif %}
             </ul>
             <hr>
             <div class="dropdown">
@@ -105,33 +108,7 @@
 							class="rounded-circle" style="cursor: pointer;">
 					</div>
 				</div>
-            
-                <!-- **************************************************** -->
-                <section class="p-4" style="animation: fadeIn 1s ease-in-out;">
-                    <h1 style="color: rgb(77, 0, 116);">- Welcome, {{ user_profile.user.username }}!</h1>
-                    <p>Email: {{ user_profile.user.email }}</p>
-                    <p>Role: {{ user_profile.get_user_type_display }}</p>
-
-                    <h2 style="color: rgb(77, 0, 116);">- Your Profile Information</h2>
-                    <ul>
-                        <li><strong>User Name: </strong> {{ user_profile.user.username }}</li>
-                        <li><strong>Email: </strong> {{ user_profile.user.email }}</li>
-                        <li><strong>Role: </strong> {{ user_profile.get_user_type_display }}</li>
-                    </ul>
-
-                    <h2 style="color: rgb(77, 0, 116);">- Your Created Courses:</h2>
-                    {% if created_courses %}
-                        <ul>
-                            {% for course in created_courses %}
-                            <li><strong>{{ course.title }}</strong></li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        <p>You haven't created any courses yet.</p>
-                    {% endif %}
-                </section>
                 <!-- *********************************************************** -->
-                <hr>
                 <style>
                     .instructor-grid {
                         display: flex;

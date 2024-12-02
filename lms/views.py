@@ -150,8 +150,10 @@ def enroll_course(request, course_id):
 @login_required
 def view_course(request, course_id):
     course = get_object_or_404(Course, id=course_id)
+    if not course.video:
+        course.video = None  # Alternatively, assign a default video URL or file here
     context = {
-        'course': course
+        'course': course,
     }
     return render(request, 'view_course.html', context)
 
@@ -172,3 +174,27 @@ def add_course(request):
         return render(request, 'add_course.html', {'form': form})
     else:
         return redirect('dashboard')
+
+@login_required
+def user_profile_view(request):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    created_courses = Course.objects.filter(created_by=user_profile)
+    context = {
+        'user_profile': user_profile,
+        'created_courses': created_courses,
+    }
+    if user_profile.is_student():
+        
+        enrolled_courses = Enrollment.objects.filter(student=user_profile)
+        
+        available_courses = Course.objects.exclude(enrollment__student=user_profile)
+        
+        all_teachers = UserProfile.objects.filter(user_type='teacher')
+        
+        context = {
+            'enrolled_courses': enrolled_courses,
+            'available_courses': available_courses,
+            'user_profile': user_profile,  
+            'all_teachers': all_teachers,  
+        }
+    return render(request, 'user_profile.html', context)

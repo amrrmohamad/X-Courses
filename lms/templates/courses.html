@@ -48,11 +48,6 @@
 						<i class="fas fa-chalkboard-teacher"></i> Teachers
 					</a>
 				</li>
-				<li>
-					<a href="{% url 'landing_page' %}#massage" class="nav-link text-light">
-						<i class="fas fa-envelope"></i> Massage
-					</a>
-				</li>
 				{% if not user_profile.is_student %}
 				<li>
 					<a href="#" class="nav-link text-light" style="background-color: #3d9fcc;">
@@ -62,13 +57,13 @@
 				{% else %}
 				<li>
 					<a href="#" class="nav-link text-light">
-						<i class="fas fa-chart-bar"></i> Analytics
+						<i class="fas fa-chart-bar"></i> Massage
 					</a>
 				</li>
 				{% endif %}
 				<li>
-					<a href="#" class="nav-link text-light">
-						<i class="fas fa-money-bill-wave"></i> Payments
+					<a href="{% url 'user_profile' %}" class="nav-link text-light">
+						<i class="fas fa-i"></i> Information
 					</a>
 				</li>
 			</ul>
@@ -342,12 +337,12 @@
 						<div class="course-grid" style="display: ruby;">
 							{% for course in available_courses %}
 							<a>
-								<div class="course-card" style="overflow-y:auto; margin: 10px;">
+								<div class="course-card" style="height:fit-content; margin: 10px;">
 									<img src="../static/img/foot_icon.png" alt="course">
 									<i class="fab fa-e"> <span>E-learning</span></i>
 									<h3 class="card-title">{{ course.title }}</h3>
 									<!--<p class="card-text">{{ course.description }}</p>-->
-									<a id="button-{{ forloop.counter }}" href="{% url 'enroll_course' course.id %}"  class="btn btn-outline-dark action-button">Enroll Now</a>
+									<a id="button-{{ forloop.counter }}" href="{% url 'enroll_course' course.id %}"  class="btn btn-outline-dark action-button" style="margin: 10px;">Enroll Now</a>
 								</div>
 								{% empty %}
 								<p>No available courses at the moment.</p>

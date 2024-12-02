@@ -23,6 +23,7 @@ class Course(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     created_by = models.ForeignKey(UserProfile, on_delete=models.CASCADE, limit_choices_to={'user_type': 'teacher'})
+    video = models.FileField(upload_to='course_videos/', blank=True, null=True, default='course_videos/default.mp4')
 
     def __str__(self):
         return self.title

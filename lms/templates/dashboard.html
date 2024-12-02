@@ -41,12 +41,12 @@
                 {% for enrollment in enrolled_courses %}
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
+                        <div class="card-body" style="height: 140px;">
                             <h5 class="card-title">{{ enrollment.course.title }}</h5>
                             <br>
                             <!--<p class="card-text">{{ enrollment.course.description }}</p>-->
                             <a href="{% url 'view_course' enrollment.course.id %}" class="btn btn-success"
-                                style="background-color: rgb(50, 1, 95); border: none;">View Course</a>
+                                style="background-color: rgb(50, 1, 95); border: none; position: absolute; bottom: 8px; left: 12px;">View Course</a>
                         </div>
                     </div>
                 </div>
@@ -306,12 +306,12 @@
                 <div class="course-grid" style="display: ruby;">
                     {% for course in available_courses %}
                     <a href="#">
-                        <div class="course-card" style="overflow-y:auto; margin: 10px;">
+                        <div class="course-card" style="margin: 10px; height: max-content;">
                             <img src="../static/img/foot_icon.png" alt="course">
                             <i class="fab fa-e"> <span>E-learning</span></i>
                             <h3 class="card-title">{{ course.title }}</h3>
                             <p class="card-text"><strong>Teacher: {{ course.created_by.user.username }}</strong></p>
-                            <a href="{% url 'enroll_course' course.id %}" class="btn btn-outline-dark">Enroll Now</a>
+                            <a href="{% url 'enroll_course' course.id %}" class="btn btn-outline-dark" style="margin: 10px;">Enroll Now</a>
                         </div>
                         {% empty %}
                         <p>No available courses at the moment.</p>

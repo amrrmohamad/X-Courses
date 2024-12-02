@@ -45,18 +45,14 @@
                             <i class="fas fa-chalkboard-teacher"></i> Teachers
                         </a>
                     </li>
+                    {% if  user_profile.is_student %}
                     <li>
                         <a href="{% url 'landing_page' %}#massage" class="nav-link text-light">
-                            <i class="fas fa-envelope"></i> Massage
+                            <i class="fas fa-chart-bar"></i> Message
                         </a>
                     </li>
-                    {% if user_profile.is_student %}
-                    <li>
-                        <a href="#" class="nav-link text-light">
-                            <i class="fas fa-chart-bar"></i> Analytics
-                        </a>
-                    </li>
-                    {% else %}
+                    {% endif %}
+                    {% if user_profile.is_teacher %}
                     <li>
                         <a href="{% url 'courses' %}" class="nav-link text-light">
                             <i class="fas fa-chart-bar"></i> All Courses
@@ -64,10 +60,18 @@
                     </li>
                     {% endif %}
                     <li>
+                        <a href="{% url 'user_profile' %}" class="nav-link text-light">
+                            <i class="fas fa-i"></i> Information
+                        </a>
+                    </li>
+                    <!-- {% if user_profile.is_student %}
+                    <li>
                         <a href="{% url 'logout' %}" class="nav-link text-light">
                             <i class="fas fa-sign-out-alt"></i> Log Out
                         </a>
                     </li>
+                    {%endif%} -->
+
                 </ul>
                 <hr>
                 <div class="dropdown">
@@ -82,7 +86,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sign out</a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Sign out</a></li>
                     </ul>
                 </div>
             </div>
