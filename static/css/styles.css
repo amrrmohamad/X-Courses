@@ -225,7 +225,6 @@ hr {
 .benefits-section .cta-btn:hover, .course-btn:hover {
     background-color: #340163;
     color: #fff;
-    text-decoration: none;
 }
 
 .benefits-section .image-section {
@@ -326,6 +325,7 @@ hr {
 }
 
 .course-card {
+    position: relative;
     background-color: #ffffff;
     border-radius: 8px;
     padding: 5px;
@@ -371,8 +371,21 @@ hr {
     font-weight: bold;
 }
 
+.course-level {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
 .course-card:hover {
     transform: translateY(-10px);
+    opacity: 1;
+    color: rgb(1, 56, 119);
 }
 
 .course-btn a {
