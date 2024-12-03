@@ -130,7 +130,6 @@ hr {
 .logo-item img {
     max-width: 150px;
     height: auto;
-    filter: grayscale(100%); /*Optional: to give a grayscale effect*/
     transition: filter 0.3s ease;
 }
 
