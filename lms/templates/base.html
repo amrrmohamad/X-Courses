@@ -77,7 +77,7 @@
                 <div class="dropdown">
                     <a href="#" class="text-light text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="../../static/img/profile.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <img src="{% static 'img/profile.jpg' %}" alt="" width="32" height="32" class="rounded-circle me-2">
                         <strong>Profile</strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
@@ -98,12 +98,12 @@
     </div>
     </div>
 
+    <!-- Custom JS -->
+    <script src="{% static 'js/main.js' %}"></script>
     <!-- Bootstrap JS (from CDN or local) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
-    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
 

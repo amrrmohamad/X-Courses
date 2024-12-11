@@ -104,16 +104,16 @@
                     <img src="{% static 'img/google.png' %}" alt="Google">
                 </div>
                 <div class="logo-item">
-                    <img src="../../static/img/michigan.png" alt="University of Michigan">
+                    <img src="{% static 'img/michigan.png' %}" alt="University of Michigan">
                 </div>
                 <div class="logo-item">
-                    <img src="../../static/img/ibm.png" alt="IBM">
+                    <img src="{% static 'img/ibm.png' %}" alt="IBM">
                 </div>
                 <div class="logo-item">
-                    <img src="../../static/img/vand.png" alt="Vanderbilt University">
+                    <img src="{% static 'img/vand.png' %}" alt="Vanderbilt University">
                 </div>
                 <div class="logo-item">
-                    <img src="../../static/img/johns.png" alt="Johns Hopkins University">
+                    <img src="{% static 'img/johns.png' %}" alt="Johns Hopkins University">
                 </div>
             </div>
         </div>
@@ -148,7 +148,7 @@
         </div>
         <div class="image-section">
             <!-- change this -->
-            <img src="../../static/img/Image.png" alt="Person Image">
+            <img src="{% static 'img/Image.png' %}" alt="Person Image">
         </div>
     </section>
     <hr>
@@ -238,7 +238,7 @@
             <div class="course-grid">
                 <a href="https://www.coursera.org/learn/the-structured-query-language-sql" target="_blank" rel="noopener">
                     <div class="course-card">
-                        <img src="../../static/img/SQL_Logo-copy.png" alt="course">
+                        <img src="{% static 'img/SQL_Logo-copy.png' %}" alt="course">
                         <i class="fab fa-microsoft"> <span>microsoft</span></i>
                         <h3>The Structured Query Language (SQL)</h3>
                         <p>Beginner - Course</p>
@@ -246,7 +246,7 @@
                 </a>
                 <a href="https://www.coursera.org/learn/leading-teams-developing-as-a-leader" target="_blank" rel="noopener">
                     <div class="course-card">
-                        <img src="../../static/img/GIES_Icon_B.png" alt="course">
+                        <img src="{% static 'img/GIES_Icon_B.png' %}" alt="course">
                         <i class="fab fa-google"> <span>google</span></i>
                         <h3>Leading Teams: Developing as a Leader</h3>
                         <p>Beginner - Course</p>
@@ -254,7 +254,7 @@
                 </a>
                 <a href="https://www.coursera.org/specializations/graphic-design" target="_blank" rel="noopener">
                     <div class="course-card">
-                        <img src="../../static/img/design.png" alt="course">
+                        <img src="{% static 'img/design.png' %}" alt="course">
                         <i class="fab fa-c"> <span>coursera</span></i>
                         <h3>UI/UX Beginners</h3>
                         <p>Beginner - Course</p>
@@ -262,7 +262,7 @@
                 </a>
                 <a href="https://www.coursera.org/specializations/data-science-foundations-r" target="_blank" rel="noopener">
                     <div class="course-card">
-                        <img src="../../static/img/Data-Science-Fundementals-in-Research.png" alt="course">
+                        <img src="{% static 'img/Data-Science-Fundementals-in-Research.png' %}" alt="course">
                         <i class="fab fa-google"> <span>google</span></i>
                         <h3>Data Science: Foundations using R Specialization</h3>
                         <p>Beginner - Course</p>
@@ -339,6 +339,50 @@
     </section>
     <hr>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const newsGrid = document.querySelector(".news-grid");
+        
+            async function fetchNews() {
+                try {
+                    const response = await fetch('/fetch_news/');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    displayNews(data.articles);
+                } catch (error) {
+                    console.error('Error fetching news:', error.message);
+                    newsGrid.innerHTML = `<p class="error">Unable to load news. Please try again later. (${error.message})</p>`;
+                }
+            }
+        
+            function displayNews(articles) {
+                if (!articles || articles.length === 0) {
+                    newsGrid.innerHTML = `<p class="no-news">No news available at the moment.</p>`;
+                    return;
+                }
+        
+                // Limit to 3 articles
+                const limitedArticles = articles.slice(0, 3);
+        
+                // Populate news content
+                newsGrid.innerHTML = limitedArticles
+                    .map(article => `
+                        <div class="news-item">
+                            <img src="${article.urlToImage || '../../static/img/foot_icon.png'}" alt="${article.title}" class="news-image">
+                            <h5 class="news-title"><strong>${article.title}</strong></h5>
+                            <p class="news-description">${article.description || 'No description available.'}</p>
+                            <a href="${article.url}" target="_blank" class="news-link">Read more</a>
+                        </div>
+                    `)
+                    .join('');
+            }
+            // Fetch news on page load
+            fetchNews();
+        });
+    </script>
+
     <!-- Top Instructors Section -->
     <section class="instructors" id="Instructors">
         <div class="container">
@@ -349,7 +393,7 @@
                     <div class="card-slider">
                         <div class="teacher-card">
                             <div class="card-header">
-                                <img src="../../static/img/teacher4.png" alt="Teacher">
+                                <img src="{% static 'img/teacher4.png' %}" alt="Teacher">
                                 <div class="teacher-info">
                                     <h3>Carole Towne </h3>
                                     <br>
@@ -372,7 +416,7 @@
                     <div class="card-slider">
                         <div class="teacher-card">
                             <div class="card-header">
-                                <img src="../../static/img/teacher3.png" alt="Teacher">
+                                <img src="{% static 'img/teacher3.png' %}" alt="Teacher">
                                 <div class="teacher-info">
                                     <h3>Carole Towne </h3>
                                     <br>
@@ -395,7 +439,7 @@
                     <div class="card-slider">
                         <div class="teacher-card">
                             <div class="card-header">
-                                <img src="../../static/img/teacher1.png" alt="Teacher">
+                                <img src="{% static 'img/teacher1.png' %}" alt="Teacher">
                                 <div class="teacher-info">
                                     <h3>Carole Towne </h3>
                                     <br>
@@ -409,7 +453,7 @@
                             <p>Ready to unravel the complexities of supply, demand, and market forces?</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="text-warning"><i class="fas fa-fire"></i> $32/hr</span>
-                                <a href="#" class="btn btn-outline-dark">View More</a>
+                                <a class="btn btn-outline-dark">View More</a>
                             </div>
                         </div>
                     </div>
@@ -463,39 +507,38 @@
             </form>
         </div>
     </section>
-    
+
     <script>
         const targetDate = new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000).getTime();
 
         const countdownInterval = setInterval(function () {
-            const now = new Date().getTime();
-            const timeLeft = targetDate - now;
+        const now = new Date().getTime();
+        const timeLeft = targetDate - now;
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById("days").textContent = days;
-            document.getElementById("hours").textContent = hours;
-            document.getElementById("minutes").textContent = minutes;
-            document.getElementById("seconds").textContent = seconds;
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
 
-            if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
-                document.querySelector('.countdown').style.display = 'none';
-                document.getElementById('offer-ended').style.display = 'block';
-            }
+        if (timeLeft <= 0) {
+            clearInterval(countdownInterval);
+            document.querySelector('.countdown').style.display = 'none';
+            document.getElementById('offer-ended').style.display = 'block';
+        }
         }, 1000);
     </script>
-
 
     <!-- Footer Section -->
     <footer>
         <div class="footer-container">
             <!-- About Company Section -->
             <div class="footer-about">
-                <img src="../../static/img/foot_icon.png" alt="icon">
+                <img src="{% static 'img/foot_icon.png' %}" alt="icon">
                 <p>
                     We offer the best courses in technology, business, and personal development.
                 </p>
@@ -543,7 +586,7 @@
         </div>
     </footer>
 
-    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}?v=1"></script>
 </body>
 
 </html>

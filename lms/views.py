@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import RegistrationForm, CourseForm
 from .models import Course, Enrollment, UserProfile
 from django.contrib.auth.models import User
-
+from django.http import JsonResponse
+import requests
 
 
 def landing_page(request):
@@ -198,3 +199,18 @@ def user_profile_view(request):
             'all_teachers': all_teachers,  
         }
     return render(request, 'user_profile.html', context)
+
+def fetch_news(request):
+    url = "https://newsapi.org/v2/top-headlines"
+    params = {
+        "country": "us",
+        "category": "technology",
+        "apiKey": "7bc5819029f640ca8b6ba28158a090c1"
+    }
+    try:
+        # Fetch data from NewsAPI
+        response = requests.get(url, params=params)
+        response.raise_for_status()  # Raise exception for HTTP errors
+        return JsonResponse(response.json())  # Forward the response as JSON
+    except requests.exceptions.RequestException as e:
+        return JsonResponse({"error": "Failed to fetch news", "details": str(e)}, status=500)
